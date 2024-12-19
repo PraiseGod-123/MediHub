@@ -1,0 +1,162 @@
+.medicines-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+}
+
+/* Filters Sidebar */
+.filters-sidebar {
+    position: sticky;
+    top: calc(var(--spacing-xl) + 60px); /* Account for header */
+    height: fit-content;
+}
+
+.filters-section {
+    background: var(--clr-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.filters-section h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--clr-text);
+    font-size: 1.25rem;
+}
+
+.search-form .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.search-form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--clr-text);
+    font-weight: 500;
+}
+
+.search-form .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Medicines Grid */
+.medicines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.medicine-card {
+    background: var(--clr-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.medicine-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.medicine-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.medicine-image.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--clr-text-light);
+}
+
+.medicine-details {
+    padding: var(--spacing-lg);
+}
+
+.medicine-details h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--clr-text);
+    font-size: 1.25rem;
+}
+
+.pharmacy-name, .category {
+    color: var(--clr-text-light);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.description {
+    color: var(--clr-text);
+    margin: var(--spacing-sm) 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.medicine-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #eee;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--clr-text);
+}
+
+.add-to-cart-form {
+    flex-shrink: 0;
+}
+
+/* No Results */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--clr-text-light);
+}
+
+.no-results i {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.no-results h2 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--clr-text);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .medicines-container {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .medicines-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-sidebar {
+        position: static;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .medicines-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
